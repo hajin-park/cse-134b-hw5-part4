@@ -80,6 +80,9 @@
         nav.insertBefore(button, ul);
       }
     }
+
+    // Set initial icon visibility based on current theme
+    updateToggleButtonIcon(getCurrentTheme());
   }
 
   function init() {

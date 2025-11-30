@@ -981,7 +981,6 @@ skill-badge[category="framework"] {
       0%,
     transparent 50%
   );
-  opacity: 0.3;
   border-radius: 0.5rem;
 
   h3 {
