@@ -502,3 +502,186 @@ skill-badge[category="framework"] {
     var(--accent-foreground-dark)
   );
 }
+
+/* Contact page styling */
+.contact-details {
+  font-style: normal;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  margin-top: clamp(1rem, 2vw, 1.5rem);
+}
+
+.contact-item {
+  position: relative;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  background-color: light-dark(
+    var(--background-light),
+    var(--background-dark)
+  );
+  border-left: 0.25rem solid
+    light-dark(var(--primary-light), var(--primary-dark));
+
+  /* Highlighter accent effect */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      light-dark(
+        var(--primary-foreground-light),
+        var(--primary-foreground-dark)
+      )
+        0%,
+      transparent 50%
+    );
+    opacity: 0.3;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  h3 {
+    margin-top: 0;
+    color: light-dark(var(--primary-light), var(--primary-dark));
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+/* Contact form styling with pastel theme */
+.contact-form {
+  max-width: 600px;
+
+  fieldset {
+    border: 0.125rem solid
+      light-dark(var(--primary-light), var(--primary-dark));
+    border-radius: 0.5rem;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    background: linear-gradient(
+      180deg,
+      light-dark(
+        var(--primary-foreground-light),
+        var(--primary-foreground-dark)
+      )
+        0%,
+      transparent 100%
+    );
+    background-size: 100% 0.5rem;
+    background-repeat: no-repeat;
+  }
+
+  legend {
+    padding: 0 0.75rem;
+    font-weight: 700;
+    color: light-dark(var(--primary-light), var(--primary-dark));
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: clamp(1rem, 2vw, 1.25rem);
+
+  label {
+    font-weight: 600;
+    color: light-dark(var(--text-light), var(--text-dark));
+  }
+
+  input,
+  textarea {
+    padding: 0.75rem 1rem;
+    border: 0.125rem solid
+      light-dark(var(--primary-light), var(--primary-dark));
+    border-radius: 0.25rem;
+    background-color: light-dark(
+      var(--background-light),
+      var(--background-dark)
+    );
+    color: light-dark(var(--text-light), var(--text-dark));
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+    &::placeholder {
+      color: light-dark(
+        color-mix(in srgb, var(--text-light) 50%, transparent),
+        color-mix(in srgb, var(--text-dark) 50%, transparent)
+      );
+    }
+
+    &:focus {
+      outline: none;
+      border-color: light-dark(
+        var(--secondary-light),
+        var(--secondary-dark)
+      );
+      box-shadow: 0 0 0 0.25rem
+        light-dark(
+          var(--secondary-foreground-light),
+          var(--secondary-foreground-dark)
+        );
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+
+  button {
+    padding: 0.75rem 1.5rem;
+    border: 0.125rem solid
+      light-dark(var(--primary-light), var(--primary-dark));
+    border-radius: 0.25rem;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &[type="submit"] {
+      background-color: light-dark(
+        var(--primary-light),
+        var(--primary-dark)
+      );
+      color: light-dark(var(--background-light), var(--background-dark));
+
+      &:hover {
+        background-color: light-dark(
+          var(--secondary-light),
+          var(--secondary-dark)
+        );
+        border-color: light-dark(
+          var(--secondary-light),
+          var(--secondary-dark)
+        );
+      }
+    }
+
+    &[type="reset"] {
+      background-color: transparent;
+      color: light-dark(var(--text-light), var(--text-dark));
+
+      &:hover {
+        background-color: light-dark(
+          var(--accent-foreground-light),
+          var(--accent-foreground-dark)
+        );
+      }
+    }
+  }
+}
