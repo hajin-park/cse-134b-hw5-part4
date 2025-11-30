@@ -64,97 +64,87 @@
           Feel free to reach out to me through any of the following channels:
         </p>
 
-        <div>
-          <h3>Phone</h3>
-          <p>
-            <strong>Mobile:</strong>
-            <a href="tel:+18587841153">(858) 784-1153</a>
-          </p>
-        </div>
+        <address class="contact-details">
+          <article class="contact-item">
+            <h3>Phone</h3>
+            <p>
+              <strong>Mobile:</strong>
+              <a href="tel:+18587841153">(858) 784-1153</a>
+            </p>
+          </article>
 
-        <div>
-          <h3>Email</h3>
-          <p>
-            <strong>Primary:</strong>
-            <a href="mailto:hajin1819@gmail.com">hajin1819@gmail.com</a><br />
-            <strong>University:</strong>
-            <a href="mailto:hap009@ucsd.edu">hap009@ucsd.edu</a>
-          </p>
-        </div>
+          <article class="contact-item">
+            <h3>Email</h3>
+            <p>
+              <strong>Primary:</strong>
+              <a href="mailto:hajin1819@gmail.com">hajin1819@gmail.com</a><br />
+              <strong>University:</strong>
+              <a href="mailto:hap009@ucsd.edu">hap009@ucsd.edu</a>
+            </p>
+          </article>
 
-        <div>
-          <h3>Location</h3>
-          <p>
-            <i>San Diego, California, United States</i>
-          </p>
-        </div>
+          <article class="contact-item">
+            <h3>Location</h3>
+            <p>
+              <i>San Diego, California, United States</i>
+            </p>
+          </article>
 
-        <div>
-          <h3>Professional Links</h3>
-          <ul>
-            <li>
-              <a href="https://github.com/hajin-park" target="_blank">GitHub</a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/hajinpark" target="_blank"
-                >LinkedIn</a
-              >
-            </li>
-            <li>
-              <a href="https://hajinpark.com" target="_blank"
-                >Personal Website</a
-              >
-            </li>
-          </ul>
-        </div>
+          <article class="contact-item">
+            <h3>Professional Links</h3>
+            <ul>
+              <li>
+                <a href="https://github.com/hajin-park" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/hajinpark" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </li>
+              <li>
+                <a href="https://hajinpark.com" target="_blank" rel="noopener noreferrer">Personal Website</a>
+              </li>
+            </ul>
+          </article>
+        </address>
       </section>
 
       <section>
         <h2>Send Me a Message</h2>
         <p>Use the form below to send me a direct message:</p>
 
-        <form action="#" method="post">
+        <form action="#" method="post" class="contact-form">
           <fieldset>
             <legend>Contact Form</legend>
 
-            <div>
-              <label for="name">Name:</label><br />
-              <input type="text" id="name" name="name" required />
-            </div>
+            <p class="form-field">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required placeholder="Your name" />
+            </p>
 
-            <br />
+            <p class="form-field">
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required placeholder="your.email@example.com" />
+            </p>
 
-            <div>
-              <label for="email">Email:</label><br />
-              <input type="email" id="email" name="email" required />
-            </div>
+            <p class="form-field">
+              <label for="subject">Subject:</label>
+              <input type="text" id="subject" name="subject" required placeholder="Message subject" />
+            </p>
 
-            <br />
-
-            <div>
-              <label for="subject">Subject:</label><br />
-              <input type="text" id="subject" name="subject" required />
-            </div>
-
-            <br />
-
-            <div>
-              <label for="message">Message:</label><br />
+            <p class="form-field">
+              <label for="message">Message:</label>
               <textarea
                 id="message"
                 name="message"
                 rows="6"
-                cols="50"
                 required
+                placeholder="Your message here..."
               ></textarea>
-            </div>
+            </p>
 
-            <br />
-
-            <div>
+            <p class="form-actions">
               <button type="submit">Send Message</button>
               <button type="reset">Clear Form</button>
-            </div>
+            </p>
           </fieldset>
         </form>
 
