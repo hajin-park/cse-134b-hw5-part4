@@ -1,9 +1,3 @@
-/**
- * Theme Toggle Script
- * Allows users to toggle between light and dark themes manually,
- * overriding the system preference.
- */
-
 (function () {
   "use strict";
 
@@ -11,36 +5,20 @@
   const THEME_LIGHT = "light";
   const THEME_DARK = "dark";
 
-  /**
-   * Get the stored theme preference from localStorage
-   * @returns {string|null} The stored theme or null if not set
-   */
   function getStoredTheme() {
     return localStorage.getItem(STORAGE_KEY);
   }
 
-  /**
-   * Store the theme preference in localStorage
-   * @param {string} theme - The theme to store
-   */
   function setStoredTheme(theme) {
     localStorage.setItem(STORAGE_KEY, theme);
   }
 
-  /**
-   * Apply the theme to the document
-   * @param {string} theme - The theme to apply ('light' or 'dark')
-   */
   function applyTheme(theme) {
     document.documentElement.style.colorScheme = theme;
     document.documentElement.setAttribute("data-theme", theme);
     updateToggleButtonIcon(theme);
   }
 
-  /**
-   * Update the toggle button icon based on current theme
-   * @param {string} theme - The current theme
-   */
   function updateToggleButtonIcon(theme) {
     const button = document.getElementById("theme-toggle");
     if (!button) return;
@@ -59,10 +37,6 @@
     }
   }
 
-  /**
-   * Get the current effective theme
-   * @returns {string} The current theme
-   */
   function getCurrentTheme() {
     const stored = getStoredTheme();
     if (stored) return stored;
@@ -72,9 +46,6 @@
       : THEME_LIGHT;
   }
 
-  /**
-   * Toggle between light and dark themes
-   */
   function toggleTheme() {
     const current = getCurrentTheme();
     const newTheme = current === THEME_DARK ? THEME_LIGHT : THEME_DARK;
@@ -82,9 +53,6 @@
     applyTheme(newTheme);
   }
 
-  /**
-   * Create the theme toggle button and insert it into the navbar
-   */
   function createToggleButton() {
     const button = document.createElement("button");
     button.id = "theme-toggle";
@@ -114,9 +82,6 @@
     }
   }
 
-  /**
-   * Initialize the theme toggle
-   */
   function init() {
     const storedTheme = getStoredTheme();
     if (storedTheme) {
@@ -143,7 +108,6 @@
       });
   }
 
-  // Initialize immediately
   init();
 })();
 
