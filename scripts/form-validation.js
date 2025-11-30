@@ -92,27 +92,7 @@
     if (errorEl) errorEl.remove();
   }
 
-  function showSuccessMessage(form) {
-    const successEl = document.createElement("article");
-    successEl.className = "form-success";
-    successEl.setAttribute("role", "status");
-    successEl.innerHTML = `
-      <h3>Message Sent!</h3>
-      <p>Thank you for your message. I'll get back to you as soon as possible.</p>
-    `;
-    form.parentNode.insertBefore(successEl, form);
-    form.reset();
-    form.style.display = "none";
-
-    // Remove success message after 5 seconds and show form again
-    setTimeout(() => {
-      successEl.remove();
-      form.style.display = "";
-    }, 5000);
-  }
-
   function handleSubmit(event) {
-    event.preventDefault();
     const form = event.target;
     let isValid = true;
 
@@ -130,10 +110,11 @@
       }
     });
 
-    if (isValid) {
-      // Simulate form submission (demo purposes)
-      showSuccessMessage(form);
+    // Only prevent submission if validation fails
+    if (!isValid) {
+      event.preventDefault();
     }
+    // If valid, allow form to submit to Formspree
   }
 
   function handleBlur(event) {
