@@ -48,12 +48,6 @@
     },
   };
 
-  /**
-   * Validate a single field against its rules
-   * @param {string} fieldName - The name of the field
-   * @param {string} value - The field value
-   * @returns {string|null} Error message or null if valid
-   */
   function validateField(fieldName, value) {
     const rules = validationRules[fieldName];
     if (!rules) return null;
@@ -79,11 +73,6 @@
     return null;
   }
 
-  /**
-   * Display error message for a field
-   * @param {HTMLElement} field - The input field element
-   * @param {string} message - The error message
-   */
   function showError(field, message) {
     clearError(field);
     field.classList.add("field-error");
@@ -96,10 +85,6 @@
     field.parentNode.appendChild(errorEl);
   }
 
-  /**
-   * Clear error message for a field
-   * @param {HTMLElement} field - The input field element
-   */
   function clearError(field) {
     field.classList.remove("field-error");
     field.removeAttribute("aria-invalid");
@@ -107,10 +92,6 @@
     if (errorEl) errorEl.remove();
   }
 
-  /**
-   * Show success message after form submission
-   * @param {HTMLFormElement} form - The form element
-   */
   function showSuccessMessage(form) {
     const successEl = document.createElement("article");
     successEl.className = "form-success";
@@ -130,10 +111,6 @@
     }, 5000);
   }
 
-  /**
-   * Handle form submission
-   * @param {Event} event - The submit event
-   */
   function handleSubmit(event) {
     event.preventDefault();
     const form = event.target;
@@ -159,10 +136,6 @@
     }
   }
 
-  /**
-   * Handle real-time field validation on blur
-   * @param {Event} event - The blur event
-   */
   function handleBlur(event) {
     const field = event.target;
     const fieldName = field.id;
@@ -177,9 +150,6 @@
     }
   }
 
-  /**
-   * Initialize form validation
-   */
   function init() {
     const form = document.querySelector(".contact-form");
     if (!form) return;
