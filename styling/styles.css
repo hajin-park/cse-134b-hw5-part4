@@ -823,3 +823,120 @@ skill-badge[category="framework"] {
     }
   }
 }
+
+/* Experience and career entry styling */
+.experience-section,
+.education-section {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.experience-entry,
+.education-entry {
+  position: relative;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  padding-left: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  border-left: 0.25rem solid
+    light-dark(var(--secondary-light), var(--secondary-dark));
+  background: linear-gradient(
+    90deg,
+    light-dark(
+      var(--secondary-foreground-light),
+      var(--secondary-foreground-dark)
+    )
+      0%,
+    transparent 30%
+  );
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  opacity: 0.95;
+
+  /* Timeline dot */
+  &::before {
+    content: "";
+    position: absolute;
+    left: -0.5rem;
+    top: clamp(1.25rem, 2.5vw, 1.75rem);
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: light-dark(
+      var(--secondary-light),
+      var(--secondary-dark)
+    );
+    border-radius: 50%;
+    border: 0.125rem solid
+      light-dark(var(--background-light), var(--background-dark));
+  }
+
+  header {
+    margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+
+    h3 {
+      margin-top: 0;
+      margin-bottom: 0.25rem;
+      color: light-dark(var(--primary-light), var(--primary-dark));
+    }
+
+    p {
+      margin-bottom: 0;
+      font-size: 0.9375rem;
+
+      time {
+        font-style: italic;
+      }
+    }
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+.education-entry {
+  border-left-color: light-dark(var(--primary-light), var(--primary-dark));
+  background: linear-gradient(
+    90deg,
+    light-dark(
+      var(--primary-foreground-light),
+      var(--primary-foreground-dark)
+    )
+      0%,
+    transparent 30%
+  );
+
+  &::before {
+    background-color: light-dark(var(--primary-light), var(--primary-dark));
+  }
+}
+
+/* Skills section styling */
+.skills-section {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.skill-group {
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(0.75rem, 1.5vw, 1rem);
+  background: linear-gradient(
+    135deg,
+    light-dark(
+      var(--accent-foreground-light),
+      var(--accent-foreground-dark)
+    )
+      0%,
+    transparent 50%
+  );
+  opacity: 0.3;
+  border-radius: 0.5rem;
+
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-bottom: 0;
+}
